@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Employee Portal</title>
+		<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	</head>
+	<body>
+		<div th:replace="~{fragments/navigation :: navigation}"></div>
+		
+		
+		
+		<div align="Center">
+		<h1><img alt="Employee portal" title="employee portal" th:src="@{/images/employeeportal.jpg}" width="200" height="120"/>
+	</div>	
+
+		
+		<main role="main" class="flex-shrink-0">
+			<div class="container mt-5">
+				<div class="jumbotron">
+							<div align="left">
+	 <a class="nav-link" href="/home" >
+							
+			<button class="btn btn-primary">back</button> </a></div>
+					<div align="center">
+					<i><b>Incentive Calculation </b></i>
+				<b><font color="red"><p th:text="${errormsg}"></p> </b> </font>
+    <b><font color="greem"><p th:text="${sucessmsg}"></p> </b> </font>
+   
+
+<form th:action="@{/incentive}" th:object="${incentive}" method="post">
+
+			<table>
+				<tr>
+					<td>Consultant Name :</td>
+					<td> <input type="text" th:field="*{consultantName}" /> </td>
+				</tr>
+				<tr>
+					<td>Bill Rate :</td>
+					<td> <input type="text" th:field="*{billRate}" /> </td>
+				</tr>
+				
+				<tr>
+					<td>Pay Rate:</td>
+					<td> <input type="text" th:field="*{payRate}" required/> </td>
+				</tr>
+				<tr>
+					<td>Payroll Type :</td>
+					<td> <input type="text" th:field="*{payRollType}" required/> </td>
+				</tr>
+				
+				<tr>
+					<td>Total work hours :</td>
+					<td> <input type="text" th:field="*{totalWorkHours}" /> </td>
+				</tr>
+				
+				<tr>
+					<td>6 Months completed(Yes/No) :</td>
+					<td> <input type="text" th:field="*{c6Months}" /> </td>
+				</tr>
+				
+				<tr>
+					<td>Client</td>
+					<td>                    
+<select name="clientName" id="clientName">
+  <option value="NFCU">Navy Federal Credit union</option>
+  <option value="FreddieMac">FreddieMac</option>
+  <option value="Amtrak">Amtrak</option>
+  <option value="Peraton">Peraton</option>
+   <option value="Peraton">Capital One</option>
+</select>
+					
+					</td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td> <input type="submit" value="Calculate" class="btn btn-primary"/> </td>
+				</tr>
+
+			</table>
+		</form>
+		
+
+</div>
+
+					
+				</div>
+			</div>
+		</main>
+		
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+		crossorigin="anonymous">
+		</script>
+		<script>
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"
+		</script>
+		
+			    <div th:replace="~{fragments/footer :: footer}"></div>
+	</body>
+	
+	
+</html>
+
+
+

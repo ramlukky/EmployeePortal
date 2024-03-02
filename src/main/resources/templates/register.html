@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Employee Portal</title>
+		<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	</head>
+	<body>
+		
+		<div th:replace="~{fragments/header :: header}"></div>
+		
+		<div align="Center">
+		<h1><img alt="Employee portal" title="employee portal" th:src="@{/images/employeeportal.jpg}" width="200" height="120"/>
+	</div>	
+		
+		<main role="main" class="flex-shrink-0">
+			<div class="container mt-5">
+				<div class="jumbotron">
+					<div align="left">
+	 <a class="nav-link" href="/" >
+							
+			<button class="btn btn-primary">back</button> </a></div>
+					<div align="center">
+					<i><b>Employee Registration </b></i>
+				<b><font color="red"><p th:text="${errormsg}"></p> </b> </font>
+    <b><font color="greem"><p th:text="${sucessmsg}"></p> </b> </font>
+    
+
+<form action="#" th:action="@{/register}" method="post" th:object="${emp}">
+        <label for="empName">Full name:</label>
+        <input type="text" th:field="*{empName}" required/>             
+        <p th:if="${#fields.hasErrors('empName')}" th:errors="*{empName}">Please enter valid Name</p></br> 
+        <label for="empEmail">E-mail:</label>
+        <input type="email" th:field="*{empEmail}" required/>
+        <p th:if="${#fields.hasErrors('empEmail')}" th:errors="*{empEmail}"/></br>
+ 
+        <label for="empPassword">Password:</label>
+        <input type="password" th:field="*{empPassword}" required/>
+        <p th:if="${#fields.hasErrors('empPassword')}" th:errors="*{empPassword}"/></br>
+
+        <label for="empDesgination">Designation:</label>
+        <input type="text" th:field="*{empDesgination}" required/>
+        <p th:if="${#fields.hasErrors('empDesgination')}" th:errors="*{empDesgination}"/></br>
+        
+         
+        <button type="submit" class="btn btn-primary">Register</button>    
+    </form>
+
+</div>
+
+					
+				</div>
+			</div>
+		</main>
+		
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+		crossorigin="anonymous">
+		</script>
+		<script>
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"
+		</script>
+		
+			    <div th:replace="~{fragments/footer :: footer}"></div>
+	</body>
+	
+	
+</html>
+
+
+

@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Employee Portal</title>
+		<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	</head>
+	<body>
+		
+		<div th:replace="~{fragments/header :: header}"></div>
+		
+		<div align="Center">
+		<h1><img alt="Employee portal" title="employee portal" th:src="@{/images/employeeportal.jpg}" width="200" height="120"/>
+	</div>	
+		
+		<main role="main" class="flex-shrink-0">
+			<div class="container mt-5">
+				<div class="jumbotron">
+					<div align="center">
+					<i><b>Employee Login </b></i>
+				<b><font color="red"><p th:text="${errormsg}"></p> </b> </font>
+    <b><font color="greem"><p th:text="${sucessmsg}"></p> </b> </font>
+    
+
+<form th:action="@{/login}" th:object="${emp}" method="post">
+<table>
+<tr>
+<td><b><i>Login</i></b></td><td></td><td></td></tr>
+<tr>
+        <td><b><i>User Id:</i></b></td>
+      
+      <td><input type="text" th:field="*{empEmail}" required/>  </td>
+<td th:if="${#fields.hasErrors('empEmail')}" th:errors="*{empEmail}">Email Error</td>
+
+</tr>
+<tr> 
+        <td><b><i>Password:</i></b></td>
+<td>     <input type="password" th:field="*{empPassword}" required/></td>
+<td th:if="${#fields.hasErrors('empPassword')}" th:errors="*{empPassword}">Password Error</td>
+</tr>
+<tr><td></td>
+<td><button type="submit">Login</button>
+<a href="/forgetpassword"><i>Forget Password</i></a>
+	</td>
+</tr>
+</table>    
+    </form>
+    
+    <table>
+		<tr>
+			<td></td>
+			<td> <i>Not Registered Yet?</i></td>
+			<td><a href="/register"><button> Register</button></a></td>
+		</tr>
+		
+	</table>
+
+</div>
+
+					
+				</div>
+			</div>
+		</main>
+		
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+		crossorigin="anonymous">
+		</script>
+		<script>
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"
+		</script>
+		
+			    <div th:replace="~{fragments/footer :: footer}"></div>
+	</body>
+	
+	
+</html>
+
+

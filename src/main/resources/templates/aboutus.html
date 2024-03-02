@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Employee Portal</title>
+		<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	</head>
+	<body>
+
+		
+	<div th:replace="~{fragments/header :: header}"></div>
+
+					
+		
+		<div align="Center">
+		<h1><img alt="Employee portal" title="employee portal" th:src="@{/images/employeeportal.jpg}" width="200" height="120"/>
+	</div>		
+		
+		<main role="main" class="flex-shrink-0">
+			<div class="container mt-5">
+				<div class="jumbotron">
+						<div align="left">
+	 								
+	 <a class="nav-link" href="/" >
+							
+			<i><b>Login/Register</b></i></a></div>
+					<div align="center">
+					
+				<b><font color="red"><p th:text="${errormsg}"></p> </b> </font>
+    <b><font color="greem"><p th:text="${sucessmsg}"></p> </b> </font>
+        </div>
+        <i><h4>Employee Portal</h4></i>
+				<i>	<font color="black"> Employee Portal is used to create and save your own database that can be used anytime. <br>
+Usually when Employees(Recruiters) move from one organization to other, they loose data in the company.<br>
+To save the data in the cloud and to make the data availalbe anytime Employee Portal is used.</font></i></b>  
+					<br>
+					<br>
+				<div align="right">	
+					
+					<b><i>designed by <font color="dark brown">Apparla Ramakanth</font></i></b><img alt="Employee portal" title="employee portal" th:src="@{/images/Ramakanth.jpg}" width="80" height="130"/>
+					</div>
+					
+				
+				</div>
+			</div>
+		</main>
+	
+		
+		<div th:replace="~{fragments/footer :: footer}"></div>
+		
+		
+	</body>
+	
+	
+</html>
+	
